@@ -8,7 +8,10 @@ class ExampleController extends Controller
 {
     public function homePage()
     {
-        return '<h1>Home Page</h1><a href="/about">View the about page!!</a>';
+        $ourName = 'Simon';
+        $animals = ['Mia', 'Dolly', 'Lucy'];
+
+        return view('homepage', ['allAnimals' => $animals, 'name' => $ourName, 'catName' => 'Mia']);
     }
 
     public function aboutPage() {
