@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function viewSinglePost(Post $post)
     {
-        
+        $post['body'] = Str::markdown($post->body);
         return view('single-post', ['post' => $post]);
     }
 
