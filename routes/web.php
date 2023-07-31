@@ -18,8 +18,8 @@ use App\Http\Controllers\UserController;
 Route::get('/',  [UserController::class, "showCorrectHomePage"])->name('login');
 Route::post('/register', [UserController::class, "register"])->middleware('guest');
 Route::post('/login', [UserController::class, "login"])->middleware('guest');
-Route::post('/logout', [UserController::class, "logout"])->middleware('auth');
+Route::post('/logout', [UserController::class, "logout"])->middleware('mustBeLoggedIn');
 
-Route::get('/create-post', [PostController::class, "showCreateForm"])->middleware('auth');
-Route::post('/create-post', [PostController::class, "storeNewPost"])->middleware('auth');
+Route::get('/create-post', [PostController::class, "showCreateForm"])->middleware('mustBeLoggedIn');
+Route::post('/create-post', [PostController::class, "storeNewPost"])->middleware('mustBeLoggedIn');
 Route::get('/post/{post}', [PostController::class, "viewSinglePost"]);
