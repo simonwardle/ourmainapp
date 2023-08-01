@@ -8,14 +8,25 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-    public function logout(){
+    public function profile(User $user)
+    {
+        //return $user->posts()->get();
+        return view('profile-posts', [
+            'username' => $user->username,
+            'posts' => $user->posts()->latest()->get(),
+            'postCount' => $user->posts()->count()
+        ]);
+    }
+
+    public function logout()
+    {
         auth()->logout();
         return redirect('/')->with('success', 'You are now logged out');
     }
 
     public function showCorrectHomePage()
     {
-        if(auth()->check()){
+        if (auth()->check()) {
             return view('homepage-feed');
         } else {
             return view('homepage');
@@ -35,7 +46,6 @@ class UserController extends Controller
         } else {
             return redirect('/')->with('failure', 'Invalid login.');
         }
-
     }
     public function register(Request $request)
     {
