@@ -2,8 +2,8 @@
     <div class="container py-md-5">
         <div class="row align-items-center">
             <div class="col-lg-7 py-3 py-md-5">
-                <h1 class="display-3">Remember Writing?</h1>
-                <p class="lead text-muted">Are you sick of short tweets and impersonal &ldquo;shared&rdquo; posts that
+                <h1 class="display-3">Find your Purfect Pet!</h1>
+                <p class="lead text-muted">Search our website for your ideal compainion.
                     are reminiscent of the late 90&rsquo;s email forwards? We believe getting back to actually writing
                     is the key to enjoying the internet again.</p>
             </div>
@@ -48,7 +48,7 @@
                     </div>
 
                     <button type="submit" class="py-3 mt-4 btn btn-lg btn-success btn-block">Sign up for
-                        PAPA</button>
+                        PickAPet</button>
                 </form>
             </div>
         </div>
